@@ -4,37 +4,38 @@ import java.util.List;
 
 import org.springframework.transaction.annotation.Transactional;
 
-import com.stock.mvc.dao.IArticleDao;
-import com.stock.mvc.entites.Article;
-import com.stock.mvc.services.IArticleService;
+import com.stock.mvc.dao.ICommandeFournisseurDao;
+import com.stock.mvc.entites.CommandeFournisseur;
+import com.stock.mvc.services.ICommandeFournisseurService;
 @Transactional
-public class ArticleServiceImpl implements IArticleService {
+public class CommandeFournisseurServiceImpl implements ICommandeFournisseurService {
 	
-	IArticleDao dao;
+	ICommandeFournisseurDao dao;
 
-	public void setDao(IArticleDao dao) {
+	public void setDao(ICommandeFournisseurDao dao) {
 		this.dao = dao;
 	}
 
+
 	@Override
-	public Article save(Article entity) {
+	public CommandeFournisseur save(CommandeFournisseur entity) {
 		return dao.save(entity);
 	}
 
 	@Override
-	public Article update(Article entity) {
+	public CommandeFournisseur update(CommandeFournisseur entity) {
 		// TODO Auto-generated method stub
 		return dao.update(entity);
 	}
 
 	@Override
-	public List<Article> selectAll() {
+	public List<CommandeFournisseur> selectAll() {
 		// TODO Auto-generated method stub
 		return dao.selectAll();
 	}
 
 	@Override
-	public Article getById(Long id) {
+	public CommandeFournisseur getById(Long id) {
 		// TODO Auto-generated method stub
 		return dao.getById(id);
 	}
@@ -46,19 +47,19 @@ public class ArticleServiceImpl implements IArticleService {
 	}
 
 	@Override
-	public List<Article> selectAll(String sortField, String sort) {
+	public List<CommandeFournisseur> selectAll(String sortField, String sort) {
 
 		return dao.selectAll(sortField, sort);
 	}
 
 	@Override
-	public Article findOne(String paramName, Object ParamValue) {
+	public CommandeFournisseur findOne(String paramName, Object ParamValue) {
 
 		return dao.findOne(paramName, ParamValue);
 	}
 
 	@Override
-	public Article findOne(String[] paramNames, Object[] ParamValues) {
+	public CommandeFournisseur findOne(String[] paramNames, Object[] ParamValues) {
 
 		return dao.findOne(paramNames, ParamValues);
 	}

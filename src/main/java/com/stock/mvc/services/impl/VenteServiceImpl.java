@@ -4,37 +4,38 @@ import java.util.List;
 
 import org.springframework.transaction.annotation.Transactional;
 
-import com.stock.mvc.dao.IArticleDao;
-import com.stock.mvc.entites.Article;
-import com.stock.mvc.services.IArticleService;
+import com.stock.mvc.dao.IVenteDao;
+import com.stock.mvc.entites.Vente;
+import com.stock.mvc.services.IVenteService;
 @Transactional
-public class ArticleServiceImpl implements IArticleService {
+public class VenteServiceImpl implements IVenteService {
 	
-	IArticleDao dao;
+	IVenteDao dao;
 
-	public void setDao(IArticleDao dao) {
+	public void setDao(IVenteDao dao) {
 		this.dao = dao;
 	}
 
+
 	@Override
-	public Article save(Article entity) {
+	public Vente save(Vente entity) {
 		return dao.save(entity);
 	}
 
 	@Override
-	public Article update(Article entity) {
+	public Vente update(Vente entity) {
 		// TODO Auto-generated method stub
 		return dao.update(entity);
 	}
 
 	@Override
-	public List<Article> selectAll() {
+	public List<Vente> selectAll() {
 		// TODO Auto-generated method stub
 		return dao.selectAll();
 	}
 
 	@Override
-	public Article getById(Long id) {
+	public Vente getById(Long id) {
 		// TODO Auto-generated method stub
 		return dao.getById(id);
 	}
@@ -46,19 +47,19 @@ public class ArticleServiceImpl implements IArticleService {
 	}
 
 	@Override
-	public List<Article> selectAll(String sortField, String sort) {
+	public List<Vente> selectAll(String sortField, String sort) {
 
 		return dao.selectAll(sortField, sort);
 	}
 
 	@Override
-	public Article findOne(String paramName, Object ParamValue) {
+	public Vente findOne(String paramName, Object ParamValue) {
 
 		return dao.findOne(paramName, ParamValue);
 	}
 
 	@Override
-	public Article findOne(String[] paramNames, Object[] ParamValues) {
+	public Vente findOne(String[] paramNames, Object[] ParamValues) {
 
 		return dao.findOne(paramNames, ParamValues);
 	}

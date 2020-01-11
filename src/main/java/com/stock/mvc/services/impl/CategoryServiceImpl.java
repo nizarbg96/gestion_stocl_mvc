@@ -1,40 +1,41 @@
 package com.stock.mvc.services.impl;
 
-import java.util.List;
 
+import java.util.List;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.stock.mvc.dao.IArticleDao;
-import com.stock.mvc.entites.Article;
-import com.stock.mvc.services.IArticleService;
-@Transactional
-public class ArticleServiceImpl implements IArticleService {
-	
-	IArticleDao dao;
+import com.stock.mvc.dao.ICategoryDao;
+import com.stock.mvc.entites.Category;
+import com.stock.mvc.services.ICategoryService;
 
-	public void setDao(IArticleDao dao) {
+@Transactional
+public class CategoryServiceImpl implements ICategoryService {
+
+	ICategoryDao dao;
+
+	public void setDao(ICategoryDao dao) {
 		this.dao = dao;
 	}
 
 	@Override
-	public Article save(Article entity) {
+	public Category save(Category entity) {
 		return dao.save(entity);
 	}
 
 	@Override
-	public Article update(Article entity) {
+	public Category update(Category entity) {
 		// TODO Auto-generated method stub
 		return dao.update(entity);
 	}
 
 	@Override
-	public List<Article> selectAll() {
+	public List<Category> selectAll() {
 		// TODO Auto-generated method stub
 		return dao.selectAll();
 	}
 
 	@Override
-	public Article getById(Long id) {
+	public Category getById(Long id) {
 		// TODO Auto-generated method stub
 		return dao.getById(id);
 	}
@@ -46,26 +47,26 @@ public class ArticleServiceImpl implements IArticleService {
 	}
 
 	@Override
-	public List<Article> selectAll(String sortField, String sort) {
+	public List<Category> selectAll(String sortField, String sort) {
 
 		return dao.selectAll(sortField, sort);
 	}
 
 	@Override
-	public Article findOne(String paramName, Object ParamValue) {
+	public Category findOne(String paramName, Object ParamValue) {
 
 		return dao.findOne(paramName, ParamValue);
 	}
 
 	@Override
-	public Article findOne(String[] paramNames, Object[] ParamValues) {
+	public Category findOne(String[] paramNames, Object[] ParamValues) {
 
 		return dao.findOne(paramNames, ParamValues);
 	}
 
 	@Override
 	public int findCountBy(String paramName, String paramValue) {
-		return dao.findCountBy(paramName, paramValue);	
+		return dao.findCountBy(paramName, paramValue);
 	}
 
 }
